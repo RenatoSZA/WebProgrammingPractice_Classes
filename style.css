@@ -1,8 +1,7 @@
-/* General Setup */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8; /* Light blue-grey background */
-    color: #001f3f; /* Navy Blue text */
+    background-color: #f0f4f8;
+    color: #001f3f;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -22,9 +21,8 @@ body {
     text-align: justify;
 }
 
-/* Header & Footer */
 .header {
-    background-color: #001f3f; /* Deep Navy */
+    background-color: #001f3f;
     color: white;
     padding: 20px;
     text-align: center;
@@ -38,38 +36,34 @@ body {
     color: #666;
 }
 
-/* Layout Grid */
 .body {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Side by side */
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 30px;
 }
 
 .container:last-child {
-    grid-column: span 2; /* Buttons take full width below */
+    grid-column: span 2;
     text-align: center;
     border-top: 1px solid #eee;
     padding-top: 20px;
 }
 
-/* Profile Image Styling */
 .profile-img {
-    width: 150px;           /* Standard size */
+    width: 150px;      
     height: 150px;
-    object-fit: cover;      /* Prevents stretching */
-    border-radius: 50%;     /* Makes it circular */
-    border: 3px solid #001f3f; /* Navy border to match your theme */
-    display: block;         /* Allows margin: auto to work */
-    margin: 0 auto 20px;    /* Centers it and adds space below */
+    object-fit: cover; 
+    border-radius: 50%;
+    border: 3px solid #001f3f;
+    display: block;      
+    margin: 0 auto 20px; 
 }
 
-/* Ensure the left container aligns text nicely under the image */
 .container {
     text-align: left; 
 }
 
-/* Button Styling */
 button {
     padding: 10px 20px;
     margin: 5px;
@@ -84,11 +78,11 @@ button {
 button:hover { opacity: 0.8; }
 
 button:active {
-    transform: scale(0.95); /* Shrinks slightly when pressed */
-    filter: brightness(1.2); /* Brightens up */
+    transform: scale(0.95);
+    filter: brightness(1.2);
 }
 
 #GitHub { background-color: #333; font-family: 'Courier New', monospace; }
 #Facebook { background-color: #1877F2; font-family: Helvetica, Arial, sans-serif; }
-#Instagram { background-color: #E4405F; font-family: 'Comic Sans MS', cursive; } /* IG vibes */
+#Instagram { background-color: #E4405F; font-family: 'Comic Sans MS', cursive; }
 #Youtube { background-color: #FF0000; font-family: 'Roboto', sans-serif; }
