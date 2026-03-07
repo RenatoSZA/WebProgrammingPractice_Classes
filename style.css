@@ -1,10 +1,22 @@
+/* =========================================
+   VARIÁVEIS GERAIS
+   ========================================= */
 :root {
     --primary: #2563eb;
-    --dark: #1e293b;
+    --primary-hover: #1d4ed8;
+    --dark: #0f172a;
     --light: #f8fafc;
     --text: #334155;
+    
+    /* Espaçamentos e transições padronizados */
+    --radius-md: 12px;
+    --radius-sm: 6px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* =========================================
+   RESET & TIPOGRAFIA
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -12,73 +24,141 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--light);
     color: var(--text);
     line-height: 1.6;
+    
+    /* Deixa a fonte mais suave e profissional */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+    /* Estrutura para manter o footer sempre no final */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Envolva seu conteúdo (header e grid) numa tag <main> para isso funcionar perfeitamente */
+main {
+    flex: 1;
+}
+
+/* =========================================
+   LAYOUT & COMPONENTES
+   ========================================= */
 .container {
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
 header {
     background-color: var(--dark);
     color: white;
-    padding: 20px 0;
+    padding: 60px 0 80px; 
     text-align: center;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.75rem); 
     margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: -0.02em; 
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: -40px; /* Efeito de sobreposição */
-    padding-bottom: 50px;
+    gap: 30px; 
+    margin-top: -50px; 
+    padding-bottom: 60px;
 }
 
+/* =========================================
+   CARDS
+   ========================================= */
 .card {
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    border-radius: var(--radius-md);
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition), box-shadow var(--transition);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 
+        0 10px 15px -3px rgba(0, 0, 0, 0.08),
+        0 20px 25px -5px rgba(0, 0, 0, 0.05);
 }
 
 .card-content {
-    padding: 25px;
+    padding: 30px;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
 }
 
 .card-content h3 {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: var(--dark);
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
+.card-content p {
+    margin-bottom: 24px; 
+    flex: 1; 
+}
+
+/* =========================================
+   BOTÕES & INTERAÇÕES
+   ========================================= */
 .btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
     background-color: var(--primary);
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    transition: background-color var(--transition), transform var(--transition);
+    border: none;
+    cursor: pointer;
 }
 
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn:active {
+    transform: scale(0.98); 
+}
+
+/* Acessibilidade para navegação por teclado */
+.btn:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
 footer {
     text-align: center;
-    padding: 40px;
-    color: #94a3b8;
+    padding: 40px 20px;
+    color: #64748b; 
+    font-size: 0.9rem;
+    background-color: white;
+    border-top: 1px solid #e2e8f0;
 }
