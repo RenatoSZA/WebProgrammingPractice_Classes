@@ -1,68 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula Teste</title>
+    <title>Renato Júnior | Portfólio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script src="script.js" defer></script>
 </head>
-<!--Cores do site predominantemente azul marinho, branco e suas tonalidade derivadas-->
 
 <body>
-    <div id="content">
-        <div class="header">
+    <main id="content">
+        
+        <header class="header">
             <h1>Renato Souza do Nascimento Junior</h1>
-            <h2><a href="mailto:renatosdnjunior@gmail.com"></a></h2>
-        </div>
-        <div class="body">
-            <div class="container">
-                <!--Lado Esquerdo-->
-                <img src="https://avatars.githubusercontent.com/u/207139446?v=4" alt="Renato's Profile Photo"
-                    class="profile-img">
+            <address id="contact" style="font-style: normal;">
+                <span><i class="fa-solid fa-envelope"></i> renatosdnjunior@gmail.com</span>
+                <span><i class="fa-solid fa-phone"></i> +55 68 99245-4978</span>
+            </address>
+        </header>
+
+        <section class="body">
+            
+            <article class="container">
+                <img src="https://avatars.githubusercontent.com/u/207139446?v=4" alt="Foto de Perfil de Renato" class="profile-img">
+                
                 <h2>Sobre mim</h2>
-                <ul>
-                    <li>
-                        <p>Tenho 17 anos</p>
-                    </li>
-                    <li>
-                        <p>Cursado Informática para Internet no IFAC</p>
-                    </li>
-                    <li>
-                        <p>Gosto de programação e criação de identidades digitais</p>
-                    </li>
-                    <li>
-                        <p>Almejo me tornar piloto</p>
-                    </li>
+                <ul style="margin-left: 20px; color: var(--text-muted); padding-top: 10px;">
+                    <li>17 anos</li>
+                    <li>Cursando Informática para Internet no IFAC</li>
+                    <li>Apaixonado por programação e criação de identidades digitais</li>
+                    <li>Almejo me tornar piloto de aviação</li>
                 </ul>
-            </div>
-            <div class="container">
-                <!--Lado Direito-->
+            </article>
+
+            <article class="container">
                 <h2>Resumé</h2>
-                <p id="description">
-                    Possuo experiência considerável em design gráfico e,
-                    principalmente em logo design e identity creation.
-                    Tenho uma boa prática em programação, sobretudo em
-                    linguagens como <b>C</b>, <b>PHP</b>, <b>Python</b>, <b>Java</b> e <b>JavaScript</b>.
-                    Almejo me aprofundar em mais assuntos relacionados
-                    a área da tecnologia, tal como estrutura de dados,
-                    AI, etc. Bem como hobbies pessoais como desenho,
-                    desenvolvimento de jogos e fotografia.
+                <p id="description" style="padding-top: 10px;">
+                    Possuo experiência considerável em design gráfico, principalmente em logo design e identity creation. 
+                    Tenho uma boa prática em programação, sobretudo em linguagens como <b>C</b>, <b>PHP</b>, <b>Python</b>, <b>Java</b> e <b>JavaScript</b>. <br><br>
+                    Almejo me aprofundar em mais assuntos relacionados à área da tecnologia, tal como estrutura de dados e Inteligência Artificial. 
+                    Bem como hobbies pessoais como desenho, desenvolvimento de jogos e fotografia.
                 </p>
-            </div>
+            </article>
+
             <div class="container">
-                <!--Abaixo dos dois containers acima-->
-                <button id="GitHub">GitHub</button>
-                <button id="Facebook">Facebook</button>
-                <button id="Instagram">Instagram</button>
-                <button id="Youtube">Youtube</button>
+                <button id="GitHub">
+                    <i class="fa-brands fa-github" style="margin-right: 8px;"></i> GitHub
+                </button>
+                <button id="Facebook">
+                    <i class="fa-brands fa-facebook" style="margin-right: 8px;"></i> Facebook
+                </button>
+                <button id="Instagram">
+                    <i class="fa-brands fa-instagram" style="margin-right: 8px;"></i> Instagram
+                </button>
+                <button id="Youtube">
+                    <i class="fa-brands fa-youtube" style="margin-right: 8px;"></i> Youtube
+                </button>
             </div>
-        </div>
-        <div class="footer">
-            2026 All Rights Reserved
-        </div>
-    </div>
+            
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 Renato Souza. All Rights Reserved.</p>
+        </footer>
+
+    </main>
 </body>
 
 </html>

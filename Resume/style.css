@@ -1,88 +1,268 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8;
-    color: #001f3f;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+/* =========================================
+   VARIÁVEIS DE TEMA (DARK MODE PREMIUM)
+   ========================================= */
+:root {
+    /* Fundo da página */
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    
+    /* Efeito Vidro (Glassmorphism) */
+    --glass-bg: rgba(30, 41, 59, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    
+    /* Cores de Destaque */
+    --primary: #3b82f6; /* Azul moderno */
+    --primary-glow: rgba(59, 130, 246, 0.4);
+    
+    /* Textos */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    
+    /* Estrutura */
+    --radius-lg: 20px;
+    --radius-sm: 8px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    line-height: 1.6;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   ESTRUTURA PRINCIPAL (O CURRÍCULO GLASS)
+   ========================================= */
 #content {
-    background-color: white;
-    width: 80%;
-    max-width: 900px;
-    margin-top: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px); /* O segredo do vidro fosco */
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    
+    width: 100%;
+    max-width: 950px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
+}
+
+/* Cabeçalho do Currículo */
+.header {
+    padding: 40px 30px;
+    text-align: center;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.02); /* Leve brilho no topo */
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+#contact span {
+    display: flex;
+    align-items: center;
+}
+
+#contact i {
+    color: var(--primary);
+}
+
+/* =========================================
+   CORPO DO CURRÍCULO (GRID)
+   ========================================= */
+.body {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Lado direito um pouco maior */
+    gap: 40px;
+    padding: 40px;
+}
+
+.container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Estilo das listas (Sobre Mim) */
+.container ul li {
+    margin-bottom: 10px;
+    position: relative;
+    list-style: none; /* Tira a bolinha padrão */
+    padding-left: 20px;
+}
+
+/* Bolinha customizada pra lista */
+.container ul li::before {
+    content: "•";
+    color: var(--primary);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -4px;
 }
 
 #description {
     text-align: justify;
+    color: var(--text-muted);
+    font-size: 1.05rem;
 }
 
-.header {
-    background-color: #001f3f;
-    color: white;
-    padding: 20px;
-    text-align: center;
+#description b {
+    color: var(--text-main);
+    font-weight: 600;
 }
 
-.footer {
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 30px;
-}
-
+/* Container dos botões ocupa a linha toda */
 .container:last-child {
-    grid-column: span 2;
+    grid-column: 1 / -1;
     text-align: center;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 30px;
+    margin-top: 10px;
 }
 
+/* =========================================
+   FOTO DE PERFIL
+   ========================================= */
 .profile-img {
-    width: 150px;      
-    height: 150px;
+    width: 160px;      
+    height: 160px;
     object-fit: cover; 
     border-radius: 50%;
-    border: 3px solid #001f3f;
+    border: 3px solid transparent; /* Bordas transparentes pra usar outline */
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
     display: block;      
-    margin: 0 auto 20px; 
+    margin: 0 auto 30px;
+    transition: all var(--transition);
 }
 
-.container {
-    text-align: left; 
+.profile-img:hover {
+    transform: scale(1.05) translateY(-5px);
+    outline-color: #60a5fa;
+    box-shadow: 0 10px 25px var(--primary-glow);
 }
 
+/* =========================================
+   BOTÕES SOCIAIS PREMIUM
+   ========================================= */
 button {
-    padding: 10px 20px;
-    margin: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    margin: 8px;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--radius-sm);
     color: white;
     cursor: pointer;
-    font-weight: bold;
-    transition: opacity 0.3s;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: inherit;
+    letter-spacing: 0.5px;
+    transition: all var(--transition);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-button:hover { opacity: 0.8; }
+/* Hover e Clique */
+button:hover { 
+    transform: translateY(-3px);
+}
 
 button:active {
-    transform: scale(0.95);
-    filter: brightness(1.2);
+    transform: translateY(0) scale(0.95);
 }
 
-#GitHub { background-color: #333; font-family: 'Courier New', monospace; }
-#Facebook { background-color: #1877F2; font-family: Helvetica, Arial, sans-serif; }
-#Instagram { background-color: #E4405F; font-family: 'Comic Sans MS', cursive; }
-#Youtube { background-color: #FF0000; font-family: 'Roboto', sans-serif; }
+/* Cores aprimoradas para Dark Mode */
+#GitHub { 
+    background-color: #24292e; 
+}
+#GitHub:hover { box-shadow: 0 8px 15px rgba(36, 41, 46, 0.5); }
+
+#Facebook { 
+    background-color: #1877F2; 
+}
+#Facebook:hover { box-shadow: 0 8px 15px rgba(24, 119, 242, 0.4); }
+
+#Instagram { 
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+#Instagram:hover { box-shadow: 0 8px 15px rgba(220, 39, 67, 0.4); }
+
+#Youtube { 
+    background-color: #ea3323; 
+}
+#Youtube:hover { box-shadow: 0 8px 15px rgba(234, 51, 35, 0.4); }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--glass-border);
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .body {
+        grid-template-columns: 1fr;
+        padding: 25px;
+        gap: 30px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    #contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .container h2 {
+        text-align: center;
+        display: block;
+    }
+}
