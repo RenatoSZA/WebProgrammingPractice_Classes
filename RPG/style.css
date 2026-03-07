@@ -1,0 +1,128 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+    --glass-bg: rgba(30, 41, 59, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+    --primary: #224c90;
+    --primary-hover: #1d4ed8;
+    --primary-glow: rgba(59, 130, 246, 0.4);
+    --radius-md: 10px;
+
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+
+    --radius-lg: 20px;
+    --radius-sm: 8px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    line-height: 1.6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+#content {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+
+    width: 100%;
+    max-width: 950px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.header {
+    padding: 40px 30px;
+    text-align: center;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+.body {
+    height: 300px;
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--glass-border);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+p {
+    width: fit-content;
+}
+
+#canva {}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color var(--transition), transform 0.1s ease;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Quando clica de fato (O efeito de afundar) */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Acessibilidade para navegação por teclado */
+button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+}
