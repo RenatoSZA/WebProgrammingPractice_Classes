@@ -1,32 +1,21 @@
-/* =========================================
-   VARIÁVEIS DE TEMA (DARK MODE PREMIUM)
-   ========================================= */
 :root {
-    /* Fundo da página */
     --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     
-    /* Efeito Vidro (Glassmorphism) */
     --glass-bg: rgba(30, 41, 59, 0.65);
     --glass-border: rgba(255, 255, 255, 0.08);
     --glass-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     
-    /* Cores de Destaque */
-    --primary: #3b82f6; /* Azul moderno */
+    --primary: #3b82f6;
     --primary-glow: rgba(59, 130, 246, 0.4);
     
-    /* Textos */
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     
-    /* Estrutura */
     --radius-lg: 20px;
     --radius-sm: 8px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* =========================================
-   RESET E BASE
-   ========================================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -47,12 +36,9 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* =========================================
-   ESTRUTURA PRINCIPAL (O CURRÍCULO GLASS)
-   ========================================= */
 #content {
     background: var(--glass-bg);
-    backdrop-filter: blur(16px); /* O segredo do vidro fosco */
+    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
@@ -63,12 +49,11 @@ body {
     overflow: hidden;
 }
 
-/* Cabeçalho do Currículo */
 .header {
     padding: 40px 30px;
     text-align: center;
     border-bottom: 1px solid var(--glass-border);
-    background: rgba(255, 255, 255, 0.02); /* Leve brilho no topo */
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .header h1 {
@@ -99,12 +84,9 @@ body {
     color: var(--primary);
 }
 
-/* =========================================
-   CORPO DO CURRÍCULO (GRID)
-   ========================================= */
 .body {
     display: grid;
-    grid-template-columns: 1fr 1.2fr; /* Lado direito um pouco maior */
+    grid-template-columns: 1fr 1.2fr;
     gap: 40px;
     padding: 40px;
 }
@@ -118,15 +100,13 @@ body {
     padding-bottom: 5px;
 }
 
-/* Estilo das listas (Sobre Mim) */
 .container ul li {
     margin-bottom: 10px;
     position: relative;
-    list-style: none; /* Tira a bolinha padrão */
+    list-style: none;
     padding-left: 20px;
 }
 
-/* Bolinha customizada pra lista */
 .container ul li::before {
     content: "•";
     color: var(--primary);
@@ -147,7 +127,6 @@ body {
     font-weight: 600;
 }
 
-/* Container dos botões ocupa a linha toda */
 .container:last-child {
     grid-column: 1 / -1;
     text-align: center;
@@ -156,15 +135,12 @@ body {
     margin-top: 10px;
 }
 
-/* =========================================
-   FOTO DE PERFIL
-   ========================================= */
 .profile-img {
     width: 160px;      
     height: 160px;
     object-fit: cover; 
     border-radius: 50%;
-    border: 3px solid transparent; /* Bordas transparentes pra usar outline */
+    border: 3px solid transparent;
     outline: 2px solid var(--primary);
     outline-offset: 4px;
     display: block;      
@@ -178,9 +154,6 @@ body {
     box-shadow: 0 10px 25px var(--primary-glow);
 }
 
-/* =========================================
-   BOTÕES SOCIAIS PREMIUM
-   ========================================= */
 button {
     display: inline-flex;
     align-items: center;
@@ -199,7 +172,6 @@ button {
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-/* Hover e Clique */
 button:hover { 
     transform: translateY(-3px);
 }
@@ -208,7 +180,6 @@ button:active {
     transform: translateY(0) scale(0.95);
 }
 
-/* Cores aprimoradas para Dark Mode */
 #GitHub { 
     background-color: #24292e; 
 }
@@ -229,9 +200,6 @@ button:active {
 }
 #Youtube:hover { box-shadow: 0 8px 15px rgba(234, 51, 35, 0.4); }
 
-/* =========================================
-   FOOTER
-   ========================================= */
 .footer {
     background: rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -241,9 +209,6 @@ button:active {
     border-top: 1px solid var(--glass-border);
 }
 
-/* =========================================
-   RESPONSIVIDADE (MOBILE)
-   ========================================= */
 @media (max-width: 768px) {
     .body {
         grid-template-columns: 1fr;
